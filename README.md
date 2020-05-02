@@ -1,12 +1,12 @@
 
-== Compiling ==
+## Compiling
 
 ```
 build.sh
 ```
 It will create the images like postgres-pgaudit:version(-alpine)?
 
-== Minimal usage ==
+## Minimal usage
 ```
   docker run \
     -e IS_AUDIT_LOG_ENABLED=true \
@@ -15,7 +15,7 @@ It will create the images like postgres-pgaudit:version(-alpine)?
     -d --rm \
     postgres-pgaudit:12-alpine
 ```
-== Useful commands ==
+## Useful commands
 
 Querying config file location:
 ```
