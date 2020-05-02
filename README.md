@@ -19,5 +19,5 @@ It will create the images like postgres-pgaudit:version(-alpine)?
 
 Querying config file location:
 ```
-psql$ show config_file
+psql$ show config_file;
 ```

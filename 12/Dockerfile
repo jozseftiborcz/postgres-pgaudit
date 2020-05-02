@@ -15,7 +15,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY pgaudit-docker-entrypoint.sh /usr/local/bin/
-COPY init.sql /docker-entrypoint-initdb.d/
+COPY init.sql /docker-entrypoint-initdb.d/init-pgaudit.sql
 
 ENTRYPOINT ["pgaudit-docker-entrypoint.sh"]
 CMD ["postgres"]

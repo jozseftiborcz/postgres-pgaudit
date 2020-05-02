@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  psql:
+    environment:
+    - IS_AUDIT_LOG_ENABLED=true
+    - POSTGRES_PASSWORD=test
+    image: 'postgres-pgaudit:12-alpine'
+    volumes:
+      - type: bind
+        source: ./postgresql.conf
+        target: /var/lib/postgresql/data/postgresql.conf

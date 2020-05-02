@@ -15,7 +15,7 @@ RUN apk update && \
   apk del curl gcc make libc-dev openssl-dev clang llvm
 
 COPY pgaudit-docker-entrypoint.sh /usr/local/bin/
-COPY init.sql /docker-entrypoint-initdb.d/
+COPY init.sql /docker-entrypoint-initdb.d/init-pgaudit.sql
 
 ENTRYPOINT ["pgaudit-docker-entrypoint.sh"]
 CMD ["postgres"]
