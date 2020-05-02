@@ -1,15 +1,15 @@
-FROM postgres:10
+FROM postgres:12
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
     curl \
 	  ca-certificates \
 	  build-essential \
-	  postgresql-server-dev-${PG_MAJOR} \
+    postgresql-server-dev-${PG_MAJOR} \
 	  libssl-dev \
 	  libkrb5-dev && \
   mkdir -p /tmp/pgaudit && \
   cd /tmp/pgaudit && \
-  curl -L https://github.com/pgaudit/pgaudit/archive/1.2.1.tar.gz | tar xz --strip 1 && \
+  curl -L https://github.com/pgaudit/pgaudit/archive/1.4.0.tar.gz | tar xz --strip 1 && \
   make -C /tmp/pgaudit/ install USE_PGXS=1 && \
   apt-get purge libssl-dev libkrb5-dev curl ca-certificates build-essential postgresql-server-dev-${PG_MAJOR} --auto-remove -y && \
   rm -rf /var/lib/apt/lists/*
